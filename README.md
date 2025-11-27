@@ -30,5 +30,20 @@ Este projeto consiste em um script simples desenvolvido em **Node.js** para simu
 
 ![Print do Monitoramento do Sistema](print_sistema.png)
 
+
+
+## 🧠 Explicação do Código e Funções
+
+Este projeto utiliza recursos nativos do **Node.js** para criar uma simulação realista sem depender de bibliotecas externas. Abaixo estão as principais funções utilizadas:
+
+### 1. `async` e `await` (Controle de Fluxo)
+Utilizados para gerenciar a natureza assíncrona da simulação.
+- **Por que foi usado?** Diferente de um loop comum que trava o processamento, o `await` pausa a execução apenas daquela iteração específica, simulando o tempo de espera real de um dispositivo aguardando resposta do servidor.
+
+### 2. `Promise` e `setTimeout` (Função Sleep)
+Foi criada uma função utilitária `sleep` que encapsula o `setTimeout` dentro de uma `Promise`.
+```javascript
+const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
 ```bash
 node simulacao_iot.js
